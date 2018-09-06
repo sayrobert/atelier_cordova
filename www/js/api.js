@@ -1,3 +1,8 @@
+/* Lessons var */
+let lessonsList = [];
+let notificationsList = [];
+let slicedNotificationsList = [];
+
 /* INIT */
 
 function getXMLHttpRequest() {
@@ -39,7 +44,7 @@ function callLessons(callback) {
 function readLessons(sData) {
     // Tu peux traiter les données reçues à partir d'ici
     if (sData){
-        console.log('Leçons reçues')
+        lessonsList = JSON.parse(sData);
 	} else {
         console.log('OU SONT LES LECONS')
 	}
@@ -56,18 +61,45 @@ function callNotifs(callback) {
 		}
 	}
 
-	xhr.open("GET", "http://swiv.outofpluto.com:8082/api/lecture/lecture/?format=json", true)
+	xhr.open("GET", "http://swiv.outofpluto.com:8082/api/lecture/notification/?format=json", true)
 	xhr.send(null)
 }
 
 function readNotifs(sData) {
     // Tu peux traiter les données reçues à partir d'ici
     if (sData){
-        console.log('Notifs reçues')
+
+        // Tableau temporaire de notifications
+        notificationsList = JSON.parse(sData);
+        notificationsList.push(notificationsList[0]);
+        notificationsList.push(notificationsList[0]);
+        console.log(notificationsList);
+
+        // Rempli le tableau s'il est vide
+        if(slicedNotificationsList.length === 0)
+            slicedNotificationsList = notificationsList.slice(0, notificationsList.length - 1);
+        // console.log(notificationsList);
+
 	} else {
         console.log('OU SONT LES NOTIFS')
 	}
 }
 
+function compareNotifications() {
+
+    callLessons(readLessons);
+
+    if(notificationsList.length !== slicedNotificationsList.length) {
+
+        let lastNotification = notificationsList[notificationsList.length - 1];
+        notificationManager.sendNotification(lastNotification);
+
+    }
+
+}
+
 callLessons(readLessons);
 callNotifs(readNotifs);
+
+setInterval(compareNotifications, 5000);
+
