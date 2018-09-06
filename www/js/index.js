@@ -30,6 +30,21 @@ var app = {
         console.log('bonjour');
         this.receivedEvent('deviceready');
 
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth()+1;
+        var yyyy = today.getFullYear();
+
+        if(dd<10) {
+            dd = '0'+dd
+        } 
+
+        if(mm<10) {
+            mm = '0'+mm
+        } 
+
+        today = yyyy + '-' + mm + '-' + dd;
+
         
         const req = new XMLHttpRequest();
         req.open('GET', 'http://swiv.outofpluto.com:8082/api/lecture/lecture/?format=json', false);
@@ -42,6 +57,10 @@ var app = {
         document.querySelector('#open').addEventListener('click', function(idEvent){
             view.event(idEvent);
         });
+
+        document.querySelector('#lessonsPerDay').addEventListener('click', function(daySelected){
+            view.lessonsPerDay(daySelected);
+        })
 
         console.log('la requête: ', req.responseText);
     },
@@ -77,11 +96,19 @@ var view = {
         });
 
         document.getElementById("content").innerHTML = '<object type="text/html" data="./views/event.html"></object>';
-        document.querySelector('#nomCours').innerHTML= 'test'
+        document.getElementById('nomCours').innerHTML= 'test';
     },
 
     notif: function (){
         document.getElementById("content").innerHTML='<object type="text/html" data="./views/notif.html"></object>';
+    }
+
+    lessonsPerDay: function(daySelected){
+        result = lessons.findAll( function (lesson){
+            lesson.date = daySelected;
+        });
+        document.getElementById("content").innerHTML='<object type="text/html" data="./views/lessonsPerDay.html"></object>';
+        document.getElementById('nomCours').innerHTML= 'test';
     }
 };
 
