@@ -1,0 +1,55 @@
+body {
+  font-family: 'Mukta', sans-serif;
+}
+
+header {
+  text-align: center;
+  height: 60px;
+  background-color: #FAFAFA;
+  position: relative;
+}
+
+header img {
+  max-width: 180px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.container .row h1{
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.container .row a{
+  margin: 20px 0;
+  display: block;
+  text-transform: uppercase;
+}
+
+.container .row {
+  padding: 0 15px;
+}
+
+.container .row p {
+  font-weight: bold;
+}
+
+.container .row p span {
+  font-weight: normal;
+}
+
+footer {
+  width: 100vw;
+  text-align: center;
+  height: 60px;
+  background-color: #FAFAFA;
+  position: fixed;
+  bottom: 0;
+}
+
+footer p {
+  padding-top: 20px;
+}
+
