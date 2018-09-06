@@ -1,0 +1,82 @@
+/* GENERALE */
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1, h2, h3, p {
+    margin: 0;
+}
+
+.wrapper-page-planning {
+    width: 95%;
+    margin: auto;
+}
+
+/* GENERALE */
+
+/* HEADER */
+
+.titre-semaine {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.date-semaine {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.date-semaine .chevron-date {
+    width: 15%;
+}
+
+.date-semaine .wrapper-date-semaine {
+    width: 40%;
+}
+
+.date-semaine a, .date-semaine div, .date-semaine div p {
+    display: inline-block;
+}
+
+/* HEADER */
+
+/* BODY */
+
+.planning {
+    margin-bottom: 20px;
+}
+
+.planning .date-planning {
+    margin-bottom: 5px;
+}
+
+.planning .wrapper-planning {
+    border: 1px solid #000000;
+    border-radius: 5px;
+}
+
+.planning .wrapper-planning .content-planning {
+    display: inline-block;
+    width: 33.333%;
+    margin-right: -4px;
+    text-align: center;
+}
+
+.planning .wrapper-planning .content-planning:nth-child(2) {
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+}
+
+.planning .wrapper-planning .content-planning a .nom-cours {
+    font-size: 20px;
+    margin: 5px;
+}
+
+.planning .wrapper-planning .content-planning a .horaire-cours {
+    text-align: center;
+    margin: 5px 10px;
+}
+
+/* BODY */

@@ -1,49 +1,96 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Accueil</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/general.css">
+    <link rel="stylesheet" type="text/css" href="./css/accueil-style.css">
+</head>
+<body>
+    
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">
+                        <img src="img/logo-new.svg" alt="logo">
+                    </a>
+                </div>
 
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
-<html>
-    <head>
-        <!--
-        Customize this policy to fit your own app's needs. For more guidance, see:
-            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
-        Some notes:
-            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
-        -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>Hello World</title>
-    </head>
-    <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                      <li class="active"><a href="./index.html">Accueil</a></li>
+                      <li><a href="./planning.html">Planning</a></li>
+                      <li><a href="./notifications.html">Notifications</a></li>
+                    </ul>
+                </div>
             </div>
-        </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-    </body>
+        </nav>
+    </header>
+
+    <div id='home' class="container">        
+        <section class="main">
+            <h1 class="lesson_name">Master Web Design</h1>
+            <div class="alert_container">
+                <div class="alert_containt">
+                    <div class="icon"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="user_image">
+                <i class="fa fa-user-circle fa-5x" aria-hidden="true"></i>
+                <p class="user_name">Carlos Santos</p>
+            </div>
+        </section>
+        <section class="calender">
+            <div class="containt">
+                <div class="header">
+                    <div class="arrows previous"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
+                    <div class="date_week">
+                        <span class="week">Jeudi</span> | <span class="date">09/10</span>
+                    </div>
+                    <div class="arrows next"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+                </div>
+                <div class="planning">
+                    <div class="lesson lesson_01">
+                        <div class="time"><span class="start">9h</span> - <span class="end">12h</span></div>
+                        <div class="name"><a href="">Design Graphique</a></div>
+                        <div class="teacher">Laura Rodrigues</div>
+                    </div>
+                    <div class="lesson lesson_02">
+                        <div class="time"><span class="start">13h</span> - <span class="end">16h</span></div>
+                        <div class="name"><a href="">Gestion de Projet</a></div>
+                        <div class="teacher">Arnauld Le Roux</div>
+                    </div>
+                    <div class="lesson lesson_03">
+                        <div class="time"><span class="start">16h</span> - <span class="end">19h</span></div>
+                        <div class="name"><a href="">UIX</a></div>
+                        <div class="teacher">Ana Paula</div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <a href="">Voir la semaine</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+    <p>&copy; 2018 - ECV Digital</p> 
+    </footer>
+    
+    <script type="text/javascript" src="cordova.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+</body>
 </html>
