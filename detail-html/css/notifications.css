@@ -1,0 +1,28 @@
+.notifications-block{
+    margin: 0 auto;
+    width: 80%;
+    border:  1px solid black;
+}
+.notifications-items{
+    width: 99%;
+}
+.notifications-items-flex{
+    display: flex;
+    flex-flow: row;
+    width: 99%;
+}
+.notifications-items-date{
+    width: 90%;
+    padding: 5px;
+}
+.notifications-items-delete{
+    width: 5%;
+    padding: 5px 5px 5px 5px;
+}
+.notifications-items-infos{
+    width: 99%;
+    padding: 5px;
+}
+.titre{
+    text-align: center;
+}
