@@ -27,7 +27,23 @@ var app = {
     // Bind any cordova events here. Common events are:
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
+        console.log('bonjour');
         this.receivedEvent('deviceready');
+
+        
+        const req = new XMLHttpRequest();
+        req.open('GET', 'http://swiv.outofpluto.com:8082/api/lecture/lecture/?format=json', false);
+        req.send(null);
+
+        if (req.status === 0) {
+            console.log('ERROR REQUEST');
+        }
+
+        document.querySelector('#open').addEventListener('click', function(idEvent){
+            view.event(idEvent);
+        });
+
+        console.log('la requête: ', req.responseText);
     },
 
     // Update DOM on a Received Event
@@ -40,6 +56,32 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+    }
+};
+
+function displayLessonHome (){
+    lessons.forEach((element, i) => {
+        if(i > 3){
+            break;
+        }
+
+        document.querySelector('#lessons').textContent = 'bonjour';
+    });
+}
+
+var view = {
+    event: function(idEvent){
+        
+        result = lessons.find( function (lesson){
+            lesson.id = idEvent;
+        });
+
+        document.getElementById("content").innerHTML = '<object type="text/html" data="./views/event.html"></object>';
+        document.querySelector('#nomCours').innerHTML= 'test'
+    },
+
+    notif: function (){
+        document.getElementById("content").innerHTML='<object type="text/html" data="./views/notif.html"></object>';
     }
 };
 
