@@ -62,7 +62,21 @@ var app = {
             view.lessonsPerDay(daySelected);
         })
 
-        console.log('la requête: ', req.responseText);
+        console.log('la requête: ');
+
+        //création du calendrier
+         createCalOptions.calendarName = "My Cal Name";
+         createCalOptions.calendarColor = "#FF0000";  
+
+         var success = function(message) { alert("Success ");};
+         var error = function(message) { alert("Error:  "); };
+
+     
+         window.plugins.calendar.openCalendar();
+          
+         var d = new Date(new Date().getTime() + 3*24*60*60*1000);
+         console.log('calendrier')
+         window.plugins.calendar.openCalendar(d, success, error);
     },
 
     // Update DOM on a Received Event
