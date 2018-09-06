@@ -1,0 +1,84 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{    
+    padding: 0 25px 25px;
+    height: 100vh; 
+}
+
+.main {
+    margin-top: 25px;
+}
+
+.main h1 {
+    text-align: center;
+}
+.main .alert_container{
+    text-align: right;    
+}
+.main .user_image{
+    text-align: center;
+}
+.main .user_name {
+    margin-top: 3%;
+    font-size: 20px;
+}
+.calender {
+    margin-top: 25px;
+}
+.calender .containt {    
+    max-width: 80%;
+    margin: 0 auto;
+}
+.calender .header{
+    text-align: center;    
+    position: relative;
+    padding: 15px 0;
+    background-color: #000;
+    color: #fff;
+}
+.calender .header .arrows{    
+    display: inline-block;
+    position: absolute;
+}
+.calender .arrows.previous {
+    left: 5px;
+}
+.calender .arrows.next {
+    right: 5px;
+}
+
+.calender .footer {
+    text-align: right;
+    margin-top: 5%;
+    font-size: 12px;
+}
+.calender .footer a {
+    color: #000;
+}
+.calender .header .date_week{
+    display: inline-block;
+}
+.planning .lesson {
+    border:1px solid #000;
+    padding: 5px 5px 10px;
+    margin-top: 5%;
+}
+.lesson .name a {
+    color: #000;
+    text-decoration: none;
+    font-weight: 600;
+}
+.lesson .name, .lesson .teacher {
+    text-align: center;
+}
+.lesson .teacher {
+    font-size: 15px;
+}
+.lesson .time {
+    font-size: 12px;
+}

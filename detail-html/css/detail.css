@@ -1,22 +1,3 @@
-body {
-  font-family: 'Mukta', sans-serif;
-}
-
-header {
-  text-align: center;
-  height: 60px;
-  background-color: #FAFAFA;
-  position: relative;
-}
-
-header img {
-  max-width: 180px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-}
-
 .container .row h1{
   font-size: 24px;
   text-transform: uppercase;
@@ -39,17 +20,3 @@ header img {
 .container .row p span {
   font-weight: normal;
 }
-
-footer {
-  width: 100vw;
-  text-align: center;
-  height: 60px;
-  background-color: #FAFAFA;
-  position: fixed;
-  bottom: 0;
-}
-
-footer p {
-  padding-top: 20px;
-}
-
